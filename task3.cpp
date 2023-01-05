@@ -1,34 +1,25 @@
-#include <iostream>
-#include <windows.h>
+#include<iostream>
 using namespace std;
-void gotoxy(int,int);
-void movement(int,int);
+void iseligible(int age);
 main()
 {
-    system("cls");
-    int x,y;
-    x=2;
-    y=3;
-cout<<"#################################" <<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#                               #"<<endl;
-cout<<"#################################"<<endl;
-gotoxy(3,4);
-cout<<"P";
+    int age;
+  cout<<"Enter your age: ";
+  cin>>age;
+  iseligible(age);
 }
 
-void gotoxy(int x, int y)
+void iseligible(int age)
 {
- COORD coordinates;
- coordinates.X=x;
- coordinates.Y=y;
- SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
+if(age>=18)
+{
+cout<<"You are eligible to vote";
+}
+
+if(age<18)
+{
+cout<<"You are not eligible to vote";
+}
+
 
 }

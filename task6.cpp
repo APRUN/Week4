@@ -1,112 +1,37 @@
-#include <iostream>
-#include <windows.h>
-using namespace std;
-void printa(int x,int y);
-void printw(int x, int y);
-void printi(int x, int y);
-void prints(int x, int y);
-void gotoxy(int, int);
-main()
+      #include <iostream>
+      using namespace std;
+
+void calculatebill(string day, int amount);
+
+
+  main()
 {
-    int x,y;
-x=5;
-y=10;
-gotoxy(x,y);
-printa(x,y);
+  int amount;
+  string day;
+  cout<<"Enter amount: ";
+  cin>>amount;
+  cout<<"Enter the day: ";
+  cin>>day;
+  calculatebill(day,amount);
 
-
-printw(5,16);
-printa(5,25);
-printi(5,32);
-prints(5,39);
-}
-void printa(int x, int y)
-{
-
-cout<<"    ##      ";
-gotoxy(x,y++);
-cout<<"  ##  ##    ";
-gotoxy(x,y++);
-cout<<" ##    ##   ";
-gotoxy(x,y++);
-cout<<" ##    ##   ";
-gotoxy(x,y++);
-cout<<" ########   ";
-gotoxy(x,y++);
-cout<<" ##    ##   ";
-gotoxy(x,y++);
-cout<<" ##    ##   ";
-
-}
-
-void printw(int x, int y)
-{
-gotoxy(x,y++);
-cout<<"  ####              #####";
-gotoxy(x,y++);
-cout<<"   ####            #### ";
-gotoxy(x,y++);
-cout<<"    ####   ####   ####  ";
-gotoxy(x,y++);
-cout<<"     ###    ##    ###   ";
-gotoxy(x,y++);
-cout<<"       ##   ##    ##    ";
-gotoxy(x,y++);
-cout<<"        #   ##   #      ";
-gotoxy(x,y++);
-cout<<"          V    V        ";
-
-} 
-
-void printi(int x, int y)
-{
-
-gotoxy(x,y++);
-cout<<"    @@     ";
-gotoxy(x,y++);
-cout<<"           ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"  #####    ";
-
-
-}
+   }
  
- void prints(int x, int y)
- {
-  gotoxy(x,y++);  
-cout<<"   @@@@@@@@    ";
-gotoxy(x,y++);
-cout<<" @@          @  ";
-gotoxy(x,y++);
-cout<<"  @@             ";
-gotoxy(x,y++);
-cout<<"    @@@@           ";
-gotoxy(x,y++);
-cout<<"          @@     ";
-gotoxy(x,y++);
-cout<<"            @@     ";
-gotoxy(x,y++);
-cout<<"          @@   ";
-gotoxy(x,y++);
-cout<<"   @ @@ @@    " ;   
 
- }
 
- void gotoxy(int x, int y)
-{
+    void calculatebill(string day, int amount)
+   {
+          int result;
+      result=amount-(amount*0.10);
+     if(day=="sunday")
+        {
+          cout<<"The payable amount is " <<result;
+          }
 
-    
- COORD coordinates;
- coordinates.X=x;
- coordinates.Y=y;
- SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
+    if(day!="sunday")
+    {
+          result=amount-(amount*0.05);
+       cout<<"The payable amount is "<<result;
+        }
+
+
 }
-

@@ -1,173 +1,36 @@
-#include <iostream>
-#include <windows.h>
-using namespace std;
-void printk();
-void printh();
-void printa();
-void printl();
-void printi();
-void printl2();
-void gotoxy(int,int);
-main()
+      #include <iostream>
+      using namespace std;
+
+void calculatebill(string day, int amount);
+
+
+  main()
 {
+  int amount;
+  string day;
+  cout<<"Enter amount: ";
+  cin>>amount;
+  cout<<"Enter the day: ";
+  cin>>day;
+  calculatebill(day,amount);
 
-printk();
-printh();
-printa();
-printl();
-printi();
-printl2();
-
-
-}
-void printk()
-{
-    int x=3;
-    int y=3;
-gotoxy(x,y);
-cout<<"##               ##";
-gotoxy(x,y++);
-cout<<"##             ##";
-gotoxy(x,y++);
-cout<<"##          ##";
-gotoxy(x,y++);
-cout<<"##        ##";
-gotoxy(x,y++);
-cout<<"##     ##";
-gotoxy(x,y++);
-cout<<"## ##";
-gotoxy(x,y++);
-cout<<"##   ##";
-gotoxy(x,y++);
-cout<<"##     ##";
-gotoxy(x,y++);
-cout<<"##       ##";
-gotoxy(x,y++) ;
-cout<<"##         ##";
-gotoxy(x,y++);
-cout<<"##          ##";
-gotoxy(x,y++);
-cout<<"##            ##";
-}
-void printh()
-{
-    int x=20;
-    int y=3;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"#################"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-gotoxy(x,y++);
-cout<<"##             ##"<<endl;
-}
-
-void printa()
-{
-    int x=40;
-    int y=3;
-gotoxy(x,y++);
-cout<<"    ##      "<<endl;
-gotoxy(x,y++);
-cout<<"  ##  ##    "<<endl;
-gotoxy(x,y++);
-cout<<" ##    ##   "<<endl;
-gotoxy(x,y++);
-cout<<" ##    ##   "<<endl;
-gotoxy(x,y++);
-cout<<" ########   "<<endl;
-gotoxy(x,y++);
-cout<<" ##    ##   "<<endl;
-gotoxy(x,y++);
-cout<<" ##    ##   "<<endl;
-
-}
-
-void printl()
-
-{
-    int x=55;
-    int y=3;
-gotoxy(x,y++);
-cout<<"#######";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"#######";
-
-}
-
-void printi()
-{
-    int x=65;
-    int y=3;
-    gotoxy(x,y);
-cout<<"    @@     ";
-gotoxy(x,y++);
-cout<<"           ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"   ###     ";
-gotoxy(x,y++);
-cout<<"  #####    ";
+   }
+ 
 
 
-}
-void gotoxy(int x, int y)
-{
+    void calculatebill(string day, int amount)
+   {
+          int result;
+      result=amount-(amount*0.10);
+     if(day=="sunday")
+        {
+          cout<<"The payable amount is " <<result;
+          }
 
-    
- COORD coordinates;
- coordinates.X=x;
- coordinates.Y=y;
- SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
-}
-void printl2()
+    if(day!="sunday")
+    {
+       cout<<"The payable amount is "<<amount;
+        }
 
-{
-    int x=77;
-    int y=3;
-gotoxy(x,y++);
-cout<<"#######";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"  ###  ";
-gotoxy(x,y++);
-cout<<"#######";
 
 }
